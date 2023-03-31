@@ -31,10 +31,18 @@ bweapons.register_weapon({
     projectile_glow = true,
     projectile_visual_size = 0.5,
     on_hit = function (self, target)
-        tnt.boom(target.intersection_point, {radius=3, ignore_protection = false, explode_center = false})
+        if not minetest.is_protected(target.intersection_point, "") then
+            tnt.boom(target.intersection_point, {radius=3, ignore_protection = false})
+        else
+            tnt.boom(target.intersection_point, {radius = 3, ignore_protection = false, ignore_on_blast = true, explode_center = false, })
+        end
         end,
     on_timeout = function (self)
-        tnt.boom(self.previous_pos, {radius=3, ignore_protection = false, explode_center = false})
+        if not minetest.is_protected(self.previous_pos, "") then
+            tnt.boom(self.previous_pos, {radius=3, ignore_protection = false})
+        else
+            tnt.boom(self.previous_pos, {radius = 3, ignore_protection = false, ignore_on_blast = true, explode_center = false, })
+        end
         end,
     recipe={
         {
@@ -227,7 +235,11 @@ bweapons.register_weapon({
     reload_sound = "bweapons_hitech_pack_missile_launcher_reload",
     reload_sound_gain = 0.25,
     on_hit = function (self, target)
-            tnt.boom(target.intersection_point, {radius=1, ignore_protection = false, explode_center = false})
+        if not minetest.is_protected(target.intersection_point, "") then
+            tnt.boom(target.intersection_point, {radius=1, ignore_protection = false})
+        else
+            tnt.boom(target.intersection_point, {radius = 1, ignore_protection = false, ignore_on_blast = true, explode_center = false, })
+        end
         end,
     recipe={
         {

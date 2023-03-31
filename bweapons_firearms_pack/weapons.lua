@@ -187,7 +187,11 @@ bweapons.register_weapon({
     projectile_texture = "bweapons_firearms_pack_grenade_ent.png",
     projectile_visual_size = 0.25,
     on_hit = function(self, target)
-        tnt.boom(target.intersection_point, {radius = 2, ignore_protection = false, explode_center = false})
+        if not minetest.is_protected(target.intersection_point, "") then
+            tnt.boom(target.intersection_point, {radius = 2, ignore_protection = false})
+        else
+            tnt.boom(target.intersection_point, {radius = 2, ignore_protection = false, ignore_on_blast = true, explode_center = false, })
+        end
     end,
     recipe = {
         {
