@@ -31,10 +31,10 @@ bweapons.register_weapon({
     projectile_glow = true,
     projectile_visual_size = 0.5,
     on_hit = function (self, target)
-        tnt.boom(target.intersection_point, {radius=3})
+        tnt.boom(target.intersection_point, {radius=3, ignore_protection = false})
         end,
     on_timeout = function (self)
-        tnt.boom(self.previous_pos, {radius=3})
+        tnt.boom(self.previous_pos, {radius=3, ignore_protection = false})
         end,
     recipe={
         {
@@ -227,7 +227,7 @@ bweapons.register_weapon({
     reload_sound = "bweapons_hitech_pack_missile_launcher_reload",
     reload_sound_gain = 0.25,
     on_hit = function (self, target)
-            tnt.boom(target.intersection_point, {radius=1})
+            tnt.boom(target.intersection_point, {radius=1, ignore_protection = false})
         end,
     recipe={
         {

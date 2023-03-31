@@ -187,7 +187,7 @@ bweapons.register_weapon({
     projectile_texture = "bweapons_firearms_pack_grenade_ent.png",
     projectile_visual_size = 0.25,
     on_hit = function(self, target)
-        tnt.boom(target.intersection_point, {radius=2})
+        tnt.boom(target.intersection_point, {radius = 2, ignore_protection = false})
     end,
     recipe = {
         {
