@@ -34,14 +34,14 @@ bweapons.register_weapon({
         if not minetest.is_protected(target.intersection_point, "") then
             tnt.boom(target.intersection_point, {radius=3, ignore_protection = false})
         else
-            tnt.boom(target.intersection_point, {radius = 3, ignore_protection = false, ignore_on_blast = true, explode_center = false, })
+            tnt.safe_boom(target.intersection_point, {radius = 3, ignore_protection = false })
         end
         end,
     on_timeout = function (self)
         if not minetest.is_protected(self.previous_pos, "") then
             tnt.boom(self.previous_pos, {radius=3, ignore_protection = false})
         else
-            tnt.boom(self.previous_pos, {radius = 3, ignore_protection = false, ignore_on_blast = true, explode_center = false, })
+            tnt.safe_boom(self.previous_pos, {radius = 3, ignore_protection = false})
         end
         end,
     recipe={
@@ -238,7 +238,7 @@ bweapons.register_weapon({
         if not minetest.is_protected(target.intersection_point, "") then
             tnt.boom(target.intersection_point, {radius=1, ignore_protection = false})
         else
-            tnt.boom(target.intersection_point, {radius = 1, ignore_protection = false, ignore_on_blast = true, explode_center = false, })
+            tnt.safe_boom(target.intersection_point, {radius = 1, ignore_protection = false })
         end
         end,
     recipe={

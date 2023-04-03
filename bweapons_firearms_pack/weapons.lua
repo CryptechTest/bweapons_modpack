@@ -190,7 +190,7 @@ bweapons.register_weapon({
         if not minetest.is_protected(target.intersection_point, "") then
             tnt.boom(target.intersection_point, {radius = 2, ignore_protection = false})
         else
-            tnt.boom(target.intersection_point, {radius = 2, ignore_protection = false, ignore_on_blast = true, explode_center = false, })
+            tnt.safe_boom(target.intersection_point, {radius = 2, ignore_protection = false})
         end
     end,
     recipe = {
