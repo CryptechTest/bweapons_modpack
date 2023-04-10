@@ -30,25 +30,25 @@ bweapons.register_weapon({
     projectile_texture = "bweapons_hitech_pack_missile_entity.png",
     projectile_glow = true,
     projectile_visual_size = 0.5,
-    on_hit = function (self, target)
+    on_hit = function(self, target)
         if not minetest.is_protected(target.intersection_point, "") then
-            tnt.boom(target.intersection_point, {radius=3, ignore_protection = false})
+            tnt.boom(target.intersection_point, { radius = 3, ignore_protection = false, explode_center = true })
         else
-            tnt.safe_boom(target.intersection_point, {radius = 3, ignore_protection = false })
+            tnt.safe_boom(target.intersection_point, { radius = 3, ignore_protection = false })
         end
-        end,
-    on_timeout = function (self)
+    end,
+    on_timeout = function(self)
         if not minetest.is_protected(self.previous_pos, "") then
-            tnt.boom(self.previous_pos, {radius=3, ignore_protection = false})
+            tnt.boom(self.previous_pos, { radius = 3, ignore_protection = false, explode_center = true })
         else
-            tnt.safe_boom(self.previous_pos, {radius = 3, ignore_protection = false})
+            tnt.safe_boom(self.previous_pos, { radius = 3, ignore_protection = false })
         end
-        end,
-    recipe={
+    end,
+    recipe = {
         {
-            {'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate'},
-            {'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate'},
-            {'', '', 'technic:composite_plate'}
+            { 'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate' },
+            { 'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate' },
+            { '',                              '',                              'technic:composite_plate' }
         },
     },
 })
@@ -92,11 +92,11 @@ bweapons.register_weapon({
     reload_sound_gain = 0.25,
     hit_sound = "bweapons_hitech_pack_impact",
     hit_sound_gain = 0.15,
-    recipe={
+    recipe = {
         {
-            {'default:diamond', 'technic:doped_silicon_wafer', 'technic:red_energy_crystal'},
-            {'technic:hv_transformer', 'technic:hv_transformer', 'technic:stainless_steel_ingot'},
-            {'', '', 'technic:stainless_steel_ingot'}
+            { 'default:diamond',        'technic:doped_silicon_wafer', 'technic:red_energy_crystal' },
+            { 'technic:hv_transformer', 'technic:hv_transformer',      'technic:stainless_steel_ingot' },
+            { '',                       '',                            'technic:stainless_steel_ingot' }
         },
     },
 })
@@ -140,11 +140,11 @@ bweapons.register_weapon({
     reload_sound_gain = 0.25,
     hit_sound = "bweapons_hitech_pack_impact",
     hit_sound_gain = 0.15,
-    recipe={
+    recipe = {
         {
-            {'default:mese', 'default:obsidian_glass', 'technic:green_energy_crystal'},
-            {'technic:hv_transformer', 'technic:hv_transformer', 'technic:composite_plate'},
-            {'', '', 'technic:stainless_steel_ingot'}
+            { 'default:mese',           'default:obsidian_glass', 'technic:green_energy_crystal' },
+            { 'technic:hv_transformer', 'technic:hv_transformer', 'technic:composite_plate' },
+            { '',                       '',                       'technic:stainless_steel_ingot' }
         },
     },
 })
@@ -192,11 +192,11 @@ bweapons.register_weapon({
     projectile_texture = "bweapons_hitech_pack_plasma_gun_projectile.png",
     projectile_glow = true,
     projectile_visual_size = 0.5,
-    recipe={
+    recipe = {
         {
-            {'default:diamondblock', 'default:obsidian_glass', 'technic:green_energy_crystal'},
-            {'technic:hv_transformer', 'technic:hv_transformer', 'technic:composite_plate'},
-            {'', '', 'technic:stainless_steel_ingot'}
+            { 'default:diamondblock',   'default:obsidian_glass', 'technic:green_energy_crystal' },
+            { 'technic:hv_transformer', 'technic:hv_transformer', 'technic:composite_plate' },
+            { '',                       '',                       'technic:stainless_steel_ingot' }
         },
     },
 })
@@ -234,18 +234,18 @@ bweapons.register_weapon({
     fire_sound_gain = 1,
     reload_sound = "bweapons_hitech_pack_missile_launcher_reload",
     reload_sound_gain = 0.25,
-    on_hit = function (self, target)
+    on_hit = function(self, target)
         if not minetest.is_protected(target.intersection_point, "") then
-            tnt.boom(target.intersection_point, {radius=1, ignore_protection = false})
+            tnt.boom(target.intersection_point, { radius = 1, ignore_protection = false, explode_center = true })
         else
-            tnt.safe_boom(target.intersection_point, {radius = 1, ignore_protection = false })
+            tnt.safe_boom(target.intersection_point, { radius = 1, ignore_protection = false })
         end
-        end,
-    recipe={
+    end,
+    recipe = {
         {
-            {'technic:copper_coil', 'technic:copper_coil', 'technic:composite_plate'},
-            {'technic:hv_transformer', 'technic:hv_transformer', 'technic:blue_energy_crystal'},
-            {'technic:copper_coil', 'technic:copper_coil', 'technic:composite_plate'}
+            { 'technic:copper_coil',    'technic:copper_coil',    'technic:composite_plate' },
+            { 'technic:hv_transformer', 'technic:hv_transformer', 'technic:blue_energy_crystal' },
+            { 'technic:copper_coil',    'technic:copper_coil',    'technic:composite_plate' }
         },
     },
 })

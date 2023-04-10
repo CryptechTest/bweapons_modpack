@@ -29,9 +29,9 @@ bweapons.register_weapon({
     hit_sound_gain = 1,
     recipe = {
         {
-            {'', 'technic:stainless_steel_ingot', ''},
-            {'', 'technic:carbon_plate', 'technic:stainless_steel_ingot'},
-            {'', '', 'group:wood'}
+            { '', 'technic:stainless_steel_ingot', '' },
+            { '', 'technic:carbon_plate',          'technic:stainless_steel_ingot' },
+            { '', '',                              'group:wood' }
         },
     },
 })
@@ -67,9 +67,9 @@ bweapons.register_weapon({
     hit_sound_gain = 1,
     recipe = {
         {
-            {'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', ''},
-            {'group:wood', 'technic:carbon_plate', 'technic:stainless_steel_ingot'},
-            {'', 'group:wood', 'group:wood'}
+            { 'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', '' },
+            { 'group:wood',                    'technic:carbon_plate',          'technic:stainless_steel_ingot' },
+            { '',                              'group:wood',                    'group:wood' }
         },
     },
 })
@@ -106,9 +106,9 @@ bweapons.register_weapon({
     hit_sound_gain = 1,
     recipe = {
         {
-            {'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'group:wood'},
-            {'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate'},
-            {'', 'group:wood', 'group:wood'}
+            { 'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'group:wood' },
+            { 'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate' },
+            { '',                              'group:wood',                    'group:wood' }
         },
     },
 })
@@ -145,9 +145,9 @@ bweapons.register_weapon({
     hit_sound_gain = 1,
     recipe = {
         {
-            {'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', ''},
-            {'technic:composite_plate', 'group:wood', 'technic:stainless_steel_ingot'},
-            {'', 'group:wood', 'group:wood'}
+            { 'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', '' },
+            { 'technic:composite_plate',       'group:wood',                    'technic:stainless_steel_ingot' },
+            { '',                              'group:wood',                    'group:wood' }
         },
     },
 })
@@ -188,16 +188,16 @@ bweapons.register_weapon({
     projectile_visual_size = 0.25,
     on_hit = function(self, target)
         if not minetest.is_protected(target.intersection_point, "") then
-            tnt.boom(target.intersection_point, {radius = 2, ignore_protection = false})
+            tnt.boom(target.intersection_point, { radius = 2, ignore_protection = false, explode_center = true })
         else
-            tnt.safe_boom(target.intersection_point, {radius = 2, ignore_protection = false})
+            tnt.safe_boom(target.intersection_point, { radius = 2, ignore_protection = false })
         end
     end,
     recipe = {
         {
-            {'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate'},
-            {'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate'},
-            {'technic:coal_dust', 'group:wood', 'group:wood'}
+            { 'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate' },
+            { 'technic:stainless_steel_ingot', 'technic:stainless_steel_ingot', 'technic:composite_plate' },
+            { 'technic:coal_dust',             'group:wood',                    'group:wood' }
         },
     },
 })
