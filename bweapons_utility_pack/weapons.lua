@@ -62,9 +62,9 @@ bweapons.register_weapon({
     end,
     recipe={
         {
-            {'fire:flint_and_steel', 'group:wood', 'farming:string'},
-            {'group:wood', '', 'farming:string'},
-            {'default:steel_ingot', 'group:wood', 'farming:string'}
+            {'fire:flint_and_steel', 'group:wood', 'group:string'},
+            {'group:wood', '', 'group:string'},
+            {'default:steel_ingot', 'group:wood', 'group:string'}
         },
     },
 })

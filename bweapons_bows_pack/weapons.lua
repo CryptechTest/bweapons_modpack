@@ -34,9 +34,9 @@ bweapons.register_weapon({
     drop_chance = 0.5,
     recipe={
         {
-            {'', 'group:wood', 'farming:string'},
-            {'group:wood', '', 'farming:string'},
-            {'', 'group:wood', 'farming:string'}
+            {'', 'group:wood', 'group:string'},
+            {'group:wood', '', 'group:string'},
+            {'', 'group:wood', 'group:string'}
         },
     },
 })
@@ -77,9 +77,9 @@ bweapons.register_weapon({
     drop_chance = 0.85,
     recipe={
         {
-            {'default:steel_ingot', 'group:wood', 'farming:string'},
+            {'default:steel_ingot', 'group:wood', 'group:string'},
             {'group:wood', 'group:wood', ''},
-            {'farming:string', '', 'default:steel_ingot'}
+            {'group:string', '', 'default:steel_ingot'}
         },
     },
 })
