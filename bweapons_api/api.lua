@@ -31,6 +31,9 @@ function bweapons.get_spread(spread)
 end
 
 function bweapons.damage_aoe(damage, puncher, pos, radius)
+    if type(puncher) ~= "userdata" or puncher == "" then
+        puncher = nil
+     end
     local targs = minetest.get_objects_inside_radius({x=pos.x,y=pos.y,z=pos.z}, radius)
     for _,t in pairs(targs) do
         local dist=math.sqrt(((t:get_pos().x-pos.x)^2)+((t:get_pos().y-pos.y)^2)+((t:get_pos().z-pos.z)^2))
